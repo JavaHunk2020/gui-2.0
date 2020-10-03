@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { MessageService } from '../services/message.service';
 
 @Component({
@@ -10,18 +10,31 @@ export class StudentComponent implements OnInit {
 
   private messageService:MessageService;
 
+  @Input("pmessage")
   public message:String="hello";
 
-  //@Autowired
-  public constructor(messageService:MessageService) {
-    this.messageService=messageService;
+  @Output()
+  public updateMessage=new EventEmitter<String>();
+
+
+  //<input #anuska  type="text" name="username" class="form-control" id="username">
+  public processUsername(pusername) : void {
+     let value=pusername.value;
+     console.log(value);
+     this.updateMessage.emit(value);
+
   }
+
+  //@Autowired
+  // public constructor(messageService:MessageService) {
+  //   this.messageService=messageService;
+  // }
 
   //This is best place to initialize the component
   ngOnInit(): void {
-    this.messageService.getObserable().subscribe((message)=>{
-      this.message=message;
-    });
+   /// this.messageService.getObserable().subscribe((message)=>{
+     // this.message=message;
+    //});
   }
 
 }

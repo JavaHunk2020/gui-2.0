@@ -11,10 +11,16 @@ export class AppComponent implements OnInit {
   //In TypeScript we can write all the JavaScript!!!!!!!!!!!
   welcome="India is a country!!!!!";
   public message:string="";
+
+  public btMessage="Coming Soon!";
  
   //@Autowired
 
   private messageService:MessageService;
+
+  public changeMessage(msg) :void {
+     this.btMessage=msg;
+  }
 
   public constructor(messageService:MessageService) {
     this.messageService=messageService;
