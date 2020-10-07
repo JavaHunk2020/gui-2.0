@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ViewChild } from '@angular/core';
 import { MessageService } from '../services/message.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { MessageService } from '../services/message.service';
 export class StudentComponent implements OnInit {
 
   private messageService:MessageService;
-
+  
   @Input("pmessage")
   public message:String="hello";
 
@@ -23,6 +23,11 @@ export class StudentComponent implements OnInit {
      console.log(value);
      this.updateMessage.emit(value);
 
+  }
+
+
+  public processMessage(msg):void {
+       this.message=msg;
   }
 
   //@Autowired

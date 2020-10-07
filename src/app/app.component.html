@@ -1,24 +1,6 @@
 
 <app-header></app-header>
 <div  class="container">
-  <h3>{{welcome}}</h3>
-  <app-student [pmessage]="message" (updateMessage)="changeMessage($event)"></app-student>
-  <span  id="emessage"  style="color:blue;font-size: 16px;font-weight: bold;">
-  {{message}}
-  </span>
-      <br/>
-       
-           <label for="username">Username</label>
-           <input #username  type="text" name="username" class="form-control" id="username">
-             <br/>
-              <label>Password</label>
-           <input #password type="password" name="password" class="form-control" id="password">
-            <br/>
-<button type="button" class="btn btn-primary" (click)="authUser(username,password);">Sign In</button>
-&nbsp;
-<a href="signup.jsp"><button type="button" class="btn btn-info">Sign Up</button></a>
-&nbsp;
-<a href="forgotPassword.jsp"><button type="button" class="btn btn-primary">{{btMessage}}</button></a>
-
+  <router-outlet></router-outlet>
 </div>
 

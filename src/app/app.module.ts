@@ -7,6 +7,8 @@ import { HeaderComponent } from './header/header.component';
 import { StudentComponent } from './student/student.component';
 import { PheaderComponent } from './pheader/pheader.component';
 import { MenuComponent } from './menu/menu.component';
+import { SignupComponent } from './signup/signup.component';
+import { SigninComponent } from './signin/signin.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { MenuComponent } from './menu/menu.component';
     HeaderComponent,
     StudentComponent,
     PheaderComponent,
-    MenuComponent
+    MenuComponent,
+    SignupComponent,
+    SigninComponent
   ],
   imports: [
     BrowserModule,
@@ -23,7 +27,9 @@ import { MenuComponent } from './menu/menu.component';
   exports: [
     HeaderComponent,
     StudentComponent,
-    PheaderComponent
+    PheaderComponent,
+    SignupComponent,
+    SigninComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

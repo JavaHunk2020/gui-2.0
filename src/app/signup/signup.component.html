@@ -1,0 +1,26 @@
+<h3>{{welcome}}</h3>
+<span  id="emessage"  style="color:blue;font-size: 16px;font-weight: bold;">
+{{message}}
+</span>
+    <br/>
+     
+         <label for="username">Username</label>
+         <input #username  type="text" name="username" class="form-control" id="username">
+           <br/>
+            <label>Password</label>
+         <input #password type="password" name="password" class="form-control" id="password">
+          <br/>
+          <label>Email</label>
+       <input #email type="email" name="email" class="form-control" id="email">
+       
+        <br/>
+        <label>Mobile</label>
+     <input #mobile type="text" name="mobile" class="form-control" id="mobile">
+      <br/>
+
+
+<button type="button" class="btn btn-primary" (click)="signUpPage();">Sign In</button>
+&nbsp;
+<a routerLink="/signup"><button type="button" class="btn btn-info">Sign Up</button></a>
+&nbsp;
+<a href="forgotPassword.jsp"><button type="button" class="btn btn-primary">{{btMessage}}</button></a>
