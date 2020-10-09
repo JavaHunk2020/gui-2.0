@@ -1,26 +1,26 @@
-<h3>{{welcome}}</h3>
+<h3>User Signup Page!</h3>
 <span  id="emessage"  style="color:blue;font-size: 16px;font-weight: bold;">
 {{message}}
 </span>
     <br/>
      
          <label for="username">Username</label>
-         <input #username  type="text" name="username" class="form-control" id="username">
+         <input type="text" [(ngModel)]="signup.username"  name="username" class="form-control">
            <br/>
             <label>Password</label>
-         <input #password type="password" name="password" class="form-control" id="password">
+         <input  type="password" [(ngModel)]="signup.password" name="password" class="form-control">
           <br/>
           <label>Email</label>
-       <input #email type="email" name="email" class="form-control" id="email">
+       <input type="email" [(ngModel)]="signup.email" name="email" class="form-control">
        
         <br/>
         <label>Mobile</label>
-     <input #mobile type="text" name="mobile" class="form-control" id="mobile">
+     <input  type="text" [(ngModel)]="signup.mobile" name="mobile" class="form-control">
       <br/>
 
 
-<button type="button" class="btn btn-primary" (click)="signUpPage();">Sign In</button>
+<button type="button" class="btn btn-primary" (click)="csignup();">Sign Up</button>
 &nbsp;
-<a routerLink="/signup"><button type="button" class="btn btn-info">Sign Up</button></a>
+<a routerLink="/signup"><button type="button" class="btn btn-info">Sign In</button></a>
 &nbsp;
-<a href="forgotPassword.jsp"><button type="button" class="btn btn-primary">{{btMessage}}</button></a>
+<a href="forgotPassword.jsp"><button type="button" class="btn btn-primary">{{signup.username}}</button></a>
