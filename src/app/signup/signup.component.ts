@@ -27,9 +27,9 @@ export class SignupComponent implements OnInit {
 
   public csignup() {
     console.log(this.signup);
-    let result=this.authService.addUser(this.signup);
-    console.log(result);
-    this.router.navigate(['/auth']);
+    this.authService.addUser(this.signup).subscribe(data=>{
+        console.log(data);   
+        this.router.navigate(['/auth']);
+    });
   }
-
 }

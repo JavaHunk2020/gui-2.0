@@ -16,3 +16,30 @@
 <a routerLink="/signup"><button type="button" class="btn btn-info">Sign Up</button></a>
 &nbsp;
 <a href="forgotPassword.jsp"><button type="button" class="btn btn-primary">{{btMessage}}</button></a>
+<hr/>
+<p>The .table-bordered class adds borders on all sides of the table and the cells:</p>            
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Mobile</th>
+      <th>Email</th>
+      <th>Password</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let customer of customers">
+      <td>{{customer.name}}</td>
+      <td>{{customer.mobile}}</td>
+      <td>{{customer.email}}</td>
+      <td>{{customer.password}}</td>
+    </tr>
+   
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+  </tbody>
+</table>

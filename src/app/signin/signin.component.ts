@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { StudentComponent } from '../student/student.component';
 import { MessageService } from '../services/message.service';
+import { AuthService } from '../services/auth.service';
+import { Signup } from '../models/signup.model';
 
 @Component({
   selector: 'app-signin',
@@ -23,20 +25,24 @@ export class SigninComponent implements OnInit {
 
   private messageService:MessageService;
 
-
+  public customers:Signup[]=[];
 
   public changeMessage(msg) :void {
      this.btMessage=msg;
      this.studentChild.processMessage("this is from parent!~");
   }
 
-  public constructor(messageService:MessageService) {
+  public constructor(messageService:MessageService,private authService:AuthService) {
     this.messageService=messageService;
     this.welcome="This is JAPAN!!";
   }
 
   public ngOnInit() : void {
     this.welcome="This is USA!!";
+    this.authService.findCustomers().subscribe(customers=>{
+          this.customers=customers;
+    });
+
   }
 
   public authUser(username,password){
