@@ -32,13 +32,19 @@ export class AuthService {
     return this.http.get<Signup[]>("https://localhost/v3/customers");
    }
 
-   public addTUser(signUp:Signup) :Observable<string> {
-    console.log("calling rest api");
-    console.log(signUp);
-    let data:Observable<string>=new Observable(ob=>{
-      ob.next("data is uploaded successfully");
-      ob.complete();
-    });
-    return data;
+   public authUser(username:string,password:string) :Observable<AppResponse> {
+
+    //Content-Type=application/json
+    //Accept =application/json
+    //415
+   // console.log(signUp);
+    return this.http.post<AppResponse>("https://localhost/v3/jsonAuth",{email:username,password:password});
+    // console.log("calling rest api");
+    // console.log(signUp);
+    // let data:Observable<string>=new Observable(ob=>{
+    //   ob.next("data is uploaded successfully");
+    //   ob.complete();
+    // });
+  //  return data;
    }
 }

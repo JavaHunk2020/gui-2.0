@@ -48,13 +48,29 @@ export class SigninComponent implements OnInit {
   public authUser(username,password){
       console.log(username.value);
       console.log(password.value);
-      if("technohunk100@gmail.com"===username.value && "cool@123"===password.value){
-          this.message="Cool! username and password are correct!!!";
-          this.messageService.setMessage("Cool! username and password are correct!!!");
-      }else{
-        this.message="Sorry! username and password are not correct!!!";
-        this.messageService.setMessage("Sorry! username and password are not correct!!!");
-      }
+      //var auth:Signup =new Signup();
+      ///auth.email=username;
+      //auth.password=password;
+      this.authService.authUser(username.value,password.value).subscribe(data=>{
+        console.log(data);
+         if(data.code=="400"){
+           this.message="Sorry! username and password are not correct!!!";
+           this.messageService.setMessage("Sorry! username and password are not correct!!!");
+       
+         }else{
+           this.message="Cool! username and password are correct!!!";
+           this.messageService.setMessage("Cool! username and password are correct!!!");
+  
+         }
+      });
+
+      // if("technohunk100@gmail.com"===username.value && "cool@123"===password.value){
+      //     this.message="Cool! username and password are correct!!!";
+      //     this.messageService.setMessage("Cool! username and password are correct!!!");
+      // }else{
+      //   this.message="Sorry! username and password are not correct!!!";
+      //   this.messageService.setMessage("Sorry! username and password are not correct!!!");
+      // }
   }
 
 
